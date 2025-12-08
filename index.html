@@ -83,7 +83,7 @@
         url("https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1920&auto=format&fit=crop");
       background-position:center,center;background-size:cover,cover;background-repeat:no-repeat,no-repeat;
     }
-    header::before{content:"";position:absolute;inset:0;background:rgba(15,59,46,.65)}
+    header::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,59,46,.75) 0%, rgba(20,84,64,.85) 100%)}
     header .hero-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto}
     header h1{font-size:3rem;margin:0 0 12px}
     header p{font-size:1.25rem;margin:0 0 24px}
@@ -99,19 +99,22 @@
 
     /* Sections */
     section{padding:60px 20px;max-width:1200px;margin:auto;scroll-margin-top:100px}
-    h2{text-align:center;font-size:2rem;margin-bottom:18px;color:var(--brand)}
+    h2{text-align:center;font-size:2.2rem;margin-bottom:18px;color:var(--brand);position:relative;padding-bottom:15px}
+    h2::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg, var(--brand), var(--brand-2));border-radius:2px}
     .section-subtitle{text-align:center;color:var(--muted);margin:0 auto 36px;max-width:900px}
 
     /* Ventures */
     .ventures{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
     .venture{
-      border:1px solid var(--card-border);border-radius:12px;padding:20px;background:#f8fbf9;
-      transition:all 0.3s ease;cursor:pointer;
+      border:1px solid var(--card-border);border-radius:12px;padding:25px;background:linear-gradient(135deg, #ffffff 0%, #f8fbf9 100%);
+      transition:all 0.3s ease;cursor:pointer;position:relative;overflow:hidden;
     }
+    .venture::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg, var(--brand), var(--brand-2));transition:width 0.3s ease}
+    .venture:hover::before{width:100%;opacity:0.05}
     .venture:hover{
-      transform:translateY(-5px);
-      box-shadow:0 8px 20px rgba(15,59,46,0.15);
-      border-color:var(--brand-2);
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 15px 35px rgba(15,59,46,0.25);
+      border-color:var(--brand);
     }
     .venture h3{margin-top:0;color:var(--brand);transition:color 0.3s ease}
     .venture:hover h3{color:var(--brand-2)}
@@ -202,6 +205,30 @@
     </div>
   </header>
 
+  <!-- STATS SECTION -->
+  <section style="background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); color: white; padding: 60px 20px; margin-top: 0;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
+        <div style="padding: 20px;">
+          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">4</div>
+          <div style="font-size: 1.1rem; opacity: 0.9;">Founding Members</div>
+        </div>
+        <div style="padding: 20px;">
+          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">50+</div>
+          <div style="font-size: 1.1rem; opacity: 0.9;">Years Combined Experience</div>
+        </div>
+        <div style="padding: 20px;">
+          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">4</div>
+          <div style="font-size: 1.1rem; opacity: 0.9;">Business Divisions</div>
+        </div>
+        <div style="padding: 20px;">
+          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">22</div>
+          <div style="font-size: 1.1rem; opacity: 0.9;">Acres Cricket Development</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section id="about">
     <h2>About Us</h2>
@@ -224,31 +251,46 @@
       <p style="font-size: 1.1rem; margin: 0 0 20px; opacity: 0.95;">Our inaugural project - developing 5 professional cricket grounds on 22 acres of prime land that brings our passion for the sport into a profitable venture, combining recreation, community building, and sustainable business operations.</p>
       
       <!-- Cricket Ground Image Placeholder -->
-      <div style="background: rgba(255,255,255,0.1); border: 2px dashed rgba(255,255,255,0.3); border-radius: 10px; padding: 40px; margin-top: 20px; position: relative;">
-        <div style="color: rgba(255,255,255,0.9); font-size: 1rem; text-align: center;">
-          <div style="font-size: 3rem; margin-bottom: 10px;">🏏</div>
-          <div style="font-weight: bold; margin-bottom: 8px; font-size: 1.1rem;">Cricket Ground Development</div>
-          <div style="font-size: 1rem; opacity: 0.9; margin-bottom: 8px;">Project Coming Soon</div>
-          <div style="font-size: 0.9rem; margin-top: 8px; opacity: 0.8;">5 Professional Cricket Grounds • 22 Acres</div>
+      <div style="margin-top: 20px;">
+        <!-- Image Gallery Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 15px;">
+          <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&h=250&fit=crop" 
+               alt="Cricket Stadium" 
+               style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 3px solid rgba(255,255,255,0.3);"
+               onerror="this.style.display='none';" />
+          <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=250&fit=crop" 
+               alt="Cricket Ground Field" 
+               style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 3px solid rgba(255,255,255,0.3);"
+               onerror="this.style.display='none';" />
+          <img src="https://images.unsplash.com/photo-1593766787879-e8c78e09cec0?w=400&h=250&fit=crop" 
+               alt="Cricket Pitch" 
+               style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 3px solid rgba(255,255,255,0.3);"
+               onerror="this.style.display='none';" />
+        </div>
+        <div style="background: rgba(255,255,255,0.1); border: 2px dashed rgba(255,255,255,0.3); border-radius: 10px; padding: 20px; text-align: center;">
+          <div style="color: rgba(255,255,255,0.9); font-size: 0.95rem;">
+            <div style="font-weight: bold; margin-bottom: 5px;">5 Professional Cricket Grounds • 22 Acres</div>
+            <div style="opacity: 0.8;">Project renderings and site photos coming soon</div>
+          </div>
         </div>
       </div>
     </div>
     
     <div class="ventures">
       <div class="venture">
-        <h3>Food &amp; Hospitality 🍴</h3>
+        <h3 style="font-size:1.4rem;">🍴 Food &amp; Hospitality</h3>
         <p>Restaurant and café operations, corporate &amp; event catering, and guest-first standards across training, quality, and controls.</p>
       </div>
       <div class="venture">
-        <h3>Real Estate 🏗️</h3>
+        <h3 style="font-size:1.4rem;">🏗️ Real Estate</h3>
         <p>Brokerage, leasing, and property management for residential &amp; commercial assets; investor advisory and hold/sell analysis.</p>
       </div>
       <div class="venture">
-        <h3>Commercial Investment Properties 🧩</h3>
+        <h3 style="font-size:1.4rem;">🧩 Commercial Investment Properties</h3>
         <p>Acquisition and rental management for stable cash flow and long-term appreciation across retail, office, and mixed-use.</p>
       </div>
       <div class="venture">
-        <h3>Motel/Hotel (Roadmap) 🛎️</h3>
+        <h3 style="font-size:1.4rem;">🛎️ Motel/Hotel (Roadmap)</h3>
         <p>Targeting limited-service assets aligned with DFW business and event demand, with a focus on efficient ops and guest experience.</p>
       </div>
     </div>
