@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HexaRoot Ventures</title>
-
-  <!-- SEO & Social -->
-  <meta name="description" content="HexaRoot Ventures — DFW-based holding company across Real Estate and Food & Hospitality. Building foundations, inspiring growth." />
+  <meta name="description" content="HexaRoot Ventures — Building enduring businesses across Food & Hospitality, Real Estate, and Investment Properties in DFW." />
   <meta property="og:title" content="HexaRoot Ventures" />
-  <meta property="og:description" content="Real Estate • Hospitality • Commercial Investments in DFW" />
+  <meta property="og:description" content="Rooted in Innovation. Built for long-term growth." />
   <meta property="og:image" content="HexaRoot_logo_footer.png" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f3b2e" />
@@ -18,530 +16,319 @@
     :root{
       --brand:#0f3b2e;
       --brand-2:#145440;
-      --ink:#1f2a24;
-      --muted:#6b7a74;
-      --nav-underline:#e7f3ed;
-      --card-border:#e5efea;
+      --ink:#1e2723;
+      --muted:#61756d;
+      --line:#deebe5;
+      --bg:#f4f9f6;
+      --white:#fff;
+      --radius:16px;
+      --shadow:0 10px 26px rgba(15,59,46,.12);
     }
+    *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.65;
-      color:var(--ink);
-      background:#fff;
-      text-rendering:optimizeLegibility;
-      -webkit-font-smoothing:antialiased;
-    }
-    
-    /* ANIMATIONS */
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-    @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-    .animate-on-scroll{opacity:0;animation:fadeInUp 0.8s ease forwards}
-    .animate-on-scroll.visible{animation:fadeInUp 0.8s ease forwards}
+    body{margin:0;font-family:Inter,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65;color:var(--ink);background:var(--white)}
+    img{max-width:100%;display:block}
+    a{color:inherit}
 
-    /* NAVBAR */
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+
     .navbar{
-      position:fixed;top:0;left:0;right:0;z-index:1000;
+      position:sticky;top:0;z-index:1000;
       background:rgba(15,59,46,.95);
-      backdrop-filter:saturate(130%) blur(8px);
-      border-bottom:1px solid rgba(255,255,255,.12);
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);
-      animation:slideDown 0.5s ease;
+      border-bottom:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(8px);
     }
-    .navbar .wrap{
-      max-width:1200px;margin:0 auto;padding:12px 22px;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-    }
-    .brand{display:flex;align-items:center;text-decoration:none;color:#fff}
-    .brand-logo{height:44px;width:auto;display:block;object-fit:contain}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:74px}
+    .brand img{height:42px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:24px;list-style:none;margin:0;padding:0;color:#fff;font-weight:600}
+    .nav-links a{text-decoration:none;opacity:.92;transition:.2s}
+    .nav-links a:hover{opacity:1}
+    .menu-btn{display:none;border:1px solid rgba(255,255,255,.26);background:transparent;color:#fff;border-radius:10px;padding:8px 11px;cursor:pointer}
 
-    .menu-btn{display:none;border:0;background:transparent;color:#fff;width:40px;height:40px;border-radius:6px;cursor:pointer}
-    .menu-icon,.menu-icon::before,.menu-icon::after{display:block;width:22px;height:2px;background:#fff;position:relative;margin:0 auto;transition:.25s ease}
-    .menu-icon::before,.menu-icon::after{content:"";position:absolute;left:0}
-    .menu-icon::before{top:-6px}
-    .menu-icon::after{top:6px}
-    .menu-btn[aria-expanded="true"] .menu-icon{background:transparent}
-    .menu-btn[aria-expanded="true"] .menu-icon::before{top:0;transform:rotate(45deg)}
-    .menu-btn[aria-expanded="true"] .menu-icon::after{top:0;transform:rotate(-45deg)}
+    .hero{
+      position:relative;isolation:isolate;color:#fff;
+      background:url("hero-bg.jpg[1].jpg") center/cover no-repeat;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(130deg, rgba(15,59,46,.88) 0%, rgba(20,84,64,.80) 52%, rgba(12,34,26,.84) 100%);
+    }
+    .hero-inner{padding:98px 0 88px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+    .eyebrow{display:inline-block;padding:6px 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+    .hero h1{margin:14px 0 14px;font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.1}
+    .hero p{margin:0 0 24px;font-size:clamp(1rem,1.8vw,1.2rem);max-width:56ch;color:rgba(255,255,255,.94)}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;border:2px solid transparent;transition:.2s}
+    .btn-primary{background:#fff;color:var(--brand)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-ghost{border-color:rgba(255,255,255,.6);color:#fff}
+    .btn-ghost:hover{background:rgba(255,255,255,.12)}
 
-    .navlinks{list-style:none;margin:0;padding:0;display:flex;gap:26px;align-items:center}
-    .navlinks a{position:relative;color:#fff;text-decoration:none;font-weight:700;padding:6px 0;transition:color .2s ease}
-    .navlinks a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:2px;background:var(--nav-underline);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-    .navlinks a:hover{color:var(--nav-underline)}
-    .navlinks a:hover::after{transform:scaleX(1)}
+    .hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);border-radius:var(--radius);padding:18px;backdrop-filter:blur(4px)}
+    .hero-card img{width:100%;height:250px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.3)}
+    .hero-card p{margin:12px 0 0;font-size:.95rem;color:rgba(255,255,255,.88)}
 
-    /* MOBILE */
-    @media (max-width:768px){
-      .brand-logo{height:36px}
-      .menu-btn{display:inline-flex;align-items:center;justify-content:center}
-      .navlinks{
-        position:absolute;top:100%;right:0;left:0;background:var(--brand);
-        border-top:1px solid rgba(255,255,255,.12);
-        display:none;flex-direction:column;gap:12px;padding:14px 20px 18px
-      }
-      .navlinks.open{display:flex}
-    }
+    .stats{background:var(--brand);color:#fff}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:24px 0}
+    .stat{padding:12px 10px;text-align:center;border-left:1px solid rgba(255,255,255,.2)}
+    .stat:first-child{border-left:0}
+    .stat strong{display:block;font-size:1.95rem;line-height:1.1}
+    .stat span{font-size:.95rem;opacity:.92}
 
-    /* HERO */
-    header{
-      position:relative;margin-top:68px;text-align:center;color:#fff;
-      padding:160px 20px 120px;
-      background-image:url("hero-bg.jpg[1].jpg"),
-        url("https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1920&auto=format&fit=crop");
-      background-position:center,center;background-size:cover,cover;background-repeat:no-repeat,no-repeat;
-    }
-    header::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,59,46,.75) 0%, rgba(20,84,64,.85) 100%)}
-    header .hero-inner{position:relative;z-index:1;max-width:1000px;margin:0 auto}
-    header h1{font-size:clamp(2rem,4vw,3.15rem);line-height:1.1;margin:0 0 14px}
-    header p{font-size:clamp(1.05rem,2vw,1.25rem);margin:0 0 26px}
-    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{
-      display:inline-block;padding:12px 20px;border-radius:999px;border:2px solid #fff;
-      color:#fff;text-decoration:none;font-weight:700;
-      transition:all 0.3s ease;
-    }
-    .btn.primary{background:#ffffff;color:var(--brand);border-color:#ffffff}
-    .btn.primary:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 4px 15px rgba(255,255,255,0.3)}
-    .btn.ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+    section{padding:74px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 34px}
+    .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.2;margin:0 0 12px;color:var(--brand)}
+    .section-head p{margin:0;color:var(--muted)}
 
-    /* Sections */
-    section{padding:72px 20px;max-width:1200px;margin:auto;scroll-margin-top:95px}
-    h2{text-align:center;font-size:clamp(1.8rem,3.2vw,2.25rem);margin-bottom:18px;color:var(--brand);position:relative;padding-bottom:15px}
-    h2::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg, var(--brand), var(--brand-2));border-radius:2px}
-    .section-subtitle{text-align:center;color:var(--muted);margin:0 auto 36px;max-width:900px;font-size:1.05rem}
-    .section-band{background:#f6faf8;padding:72px 0}
-    .section-band,
-    .stats-section{
-      max-width:100%;
-      margin:0;
-      border-top:1px solid #e4eeea;
-      border-bottom:1px solid #e4eeea;
-    }
-    .section-band > .section-inner,
-    .stats-inner{
-      max-width:1200px;
-      margin:0 auto;
-      padding:0 20px;
-    }
+    .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}
+    .panel{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+    .panel h3{margin:0 0 10px;color:var(--brand)}
+    .panel p{margin:0;color:#3e4f49}
 
-    /* Ventures */
-    .ventures{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-    .venture{
-      border:1px solid var(--card-border);border-radius:12px;padding:25px;background:linear-gradient(135deg, #ffffff 0%, #f8fbf9 100%);
-      transition:all 0.3s ease;cursor:pointer;position:relative;overflow:hidden;
-    }
-    .venture::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:linear-gradient(180deg, var(--brand), var(--brand-2));transition:width 0.3s ease}
-    .venture:hover::before{width:100%;opacity:0.05}
-    .venture:hover{
-      transform:translateY(-8px) scale(1.02);
-      box-shadow:0 15px 35px rgba(15,59,46,0.25);
-      border-color:var(--brand);
-    }
-    .venture h3{margin-top:0;font-size:1.4rem;color:var(--brand);transition:color 0.3s ease}
-    .venture:hover h3{color:var(--brand-2)}
-    .feature-callout{
-      background:linear-gradient(135deg, #0f3b2e 0%, #145440 100%);
-      color:#fff;
-      padding:30px;
-      border-radius:15px;
-      margin-bottom:40px;
-      text-align:center;
-      box-shadow:0 14px 32px rgba(15,59,46,0.28);
-    }
-    .feature-callout h3{color:#fff;font-size:clamp(1.45rem,2.8vw,1.8rem);margin:0 0 15px}
-    .feature-callout p{font-size:1.06rem;margin:0 0 20px;opacity:.95}
-    .feature-gallery{
-      margin-top:20px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-      gap:15px;
-      margin-bottom:15px;
-    }
-    .feature-gallery img{
-      width:100%;
-      height:200px;
-      object-fit:cover;
-      border-radius:10px;
-      border:3px solid rgba(255,255,255,0.3);
-    }
-    .feature-note{
-      background:rgba(255,255,255,0.1);
-      border:2px dashed rgba(255,255,255,0.3);
-      border-radius:10px;
-      padding:20px;
-      text-align:center;
-      color:rgba(255,255,255,0.9);
-      font-size:.95rem;
-    }
-    .feature-note strong{display:block;margin-bottom:5px}
+    .ventures{background:#f8fcfa;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px;color:var(--brand)}
+    .card p{margin:0;color:#485a53}
 
-    /* Team */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
-    .card{
-      border:1px solid var(--card-border);border-radius:12px;padding:20px;background:#fff;
-      box-shadow:0 2px 6px rgba(0,0,0,.05);
-      transition:all 0.3s ease;
-    }
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 12px 30px rgba(15,59,46,0.2);
-      border-color:var(--brand);
-    }
-    .card-header{display:flex;align-items:center;gap:12px}
-    .avatar{width:56px;height:56px;border-radius:50%;background:#f2f7f5;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;border:1px solid var(--card-border);transition:all 0.3s ease}
-    .avatar-img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1px solid var(--card-border);transition:all 0.3s ease}
-    .card:hover .avatar-img,.card:hover .avatar{transform:scale(1.1);border-color:var(--brand)}
-    .card-header h3{margin:0;font-size:1.1rem}
-    .card-header p{margin:2px 0 0;font-size:.9rem;color:#5c6a64}
-    .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
-    .tag{border:1px solid #d7e6df;border-radius:20px;padding:4px 10px;font-size:.75rem;background:#f5fbf8}
-    .bio{margin-top:12px;font-size:.95rem;color:#3b4742}
+    .project{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+    .project img{height:100%;min-height:290px;object-fit:cover;border-radius:var(--radius)}
 
-    /* Contact */
-    .contact{text-align:center}
-    .contact form{max-width:680px;margin:16px auto 0;text-align:left;background:#fff;padding:22px;border:1px solid var(--card-border);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.04)}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .form-grid label{margin:0}
-    .contact label{display:block}
-    .contact input,.contact textarea{
-      width:100%;padding:10px;margin:6px 0 12px;border:1px solid var(--card-border);border-radius:8px;
-      transition:all 0.3s ease;
-    }
-    .contact input:focus,.contact textarea:focus{
-      outline:none;border-color:var(--brand);
-      box-shadow:0 0 0 3px rgba(15,59,46,0.1);
-    }
-    .contact button{
-      background:var(--brand);color:#fff;border:0;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer;
-      transition:all 0.3s ease;
-    }
-    .contact button:hover{
-      background:var(--brand-2);
-      transform:translateY(-2px);
-      box-shadow:0 4px 15px rgba(15,59,46,0.3);
-    }
+    .team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .person{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .person img{width:100%;height:250px;object-fit:cover;background:#e8f1ec}
+    .person-body{padding:16px}
+    .person h3{margin:0 0 4px;font-size:1.07rem;color:var(--brand)}
+    .person p{margin:0;color:var(--muted);font-size:.92rem}
 
-    /* FOOTER */
-    footer{background:var(--brand);color:#fff;text-align:center;padding:30px 20px;margin-top:40px}
-    .footer-content{max-width:1200px;margin:0 auto}
-    .footer-logo{max-height:120px;width:auto;display:block;margin:0 auto 12px}
-    .credit{font-size:.9rem;color:#cce7dd;margin-top:6px}
-    .credit a{color:#fff;text-decoration:none}
-    .credit a:hover{text-decoration:underline}
+    .contact-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px}
+    .contact-list{display:grid;gap:10px}
+    .contact-list a{text-decoration:none;color:var(--brand);font-weight:700}
+    form{display:grid;gap:10px}
+    label{font-weight:600;font-size:.92rem;color:#43564f}
+    input,textarea{width:100%;margin-top:5px;padding:11px 12px;border:1px solid #cfe0d8;border-radius:10px;font:inherit}
+    input:focus,textarea:focus{outline:0;border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,59,46,.12)}
+    .submit{justify-self:start;background:var(--brand);color:#fff;border:0;padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer}
 
-    @media (max-width:900px){
-      header{padding:132px 20px 100px}
+    footer{background:#0d3127;color:#d9efe5;padding:28px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+    .footer-logo{height:50px;width:auto}
+    .small{font-size:.92rem;color:#c4dfd3}
+
+    @media (max-width:980px){
+      .hero-inner,.about-wrap,.project,.contact-wrap{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+      .stat{border-left:0;border-top:1px solid rgba(255,255,255,.16)}
+      .stat:nth-child(-n+2){border-top:0}
+      .cards{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
-    @media (max-width:768px){
-      section{padding:60px 18px}
-      .feature-callout{padding:24px 18px}
-      .form-grid{grid-template-columns:1fr}
-      .contact form{padding:18px}
-    }
-    @media (prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    @media (max-width:760px){
+      .nav-links{display:none;position:absolute;left:0;right:0;top:74px;background:var(--brand);padding:14px 20px 18px;flex-direction:column;align-items:flex-start;gap:12px}
+      .nav-links.open{display:flex}
+      .menu-btn{display:inline-block}
+      section{padding:62px 0}
+      .team-grid{grid-template-columns:1fr}
+      .hero-inner{padding:82px 0 72px}
+      .hero-card img{height:220px}
     }
   </style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar" role="navigation" aria-label="Primary">
-    <div class="wrap">
-      <a class="brand" href="#">
-        <img class="brand-logo" src="HexaRoot_logo_navbar.png" alt="HexaRoot Ventures logo" />
+  <nav class="navbar" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="HexaRoot Ventures home">
+        <img src="HexaRoot_logo_navbar.png" alt="HexaRoot Ventures logo" />
       </a>
-
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-controls="primaryNav" aria-expanded="false">
-        <span class="menu-icon"></span>
-      </button>
-
-      <ul class="navlinks" id="primaryNav">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#ventures">Our Ventures</a></li>
-        <li><a href="#team">Our Founding Team</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#ventures">Ventures</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header>
-    <div class="hero-inner">
-      <h1>HexaRoot Ventures</h1>
-      <p>Rooted in Innovation – Growing in Food &amp; Property</p>
-      <div class="cta-row">
-        <a href="#contact" class="btn primary">Talk to Us</a>
-        <a href="#ventures" class="btn ghost">Explore Divisions</a>
+  <header class="hero" id="home">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow">HexaRoot Ventures</span>
+        <h1>Rooted in Innovation.<br/>Built for Long-Term Growth.</h1>
+        <p>We are a DFW-based venture group operating across Food & Hospitality, Real Estate, and Commercial Investment Properties with disciplined execution and people-first leadership.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Talk to Us</a>
+          <a class="btn btn-ghost" href="#ventures">Explore Ventures</a>
+        </div>
       </div>
+      <aside class="hero-card" aria-label="Featured project">
+        <img src="hero_ logo_png.jpg" alt="HexaRoot Ventures business showcase" onerror="this.src='hero-bg.jpg[1].jpg';" />
+        <p>Current spotlight: 22-acre cricket ground development project in the DFW region.</p>
+      </aside>
     </div>
   </header>
 
-  <!-- STATS SECTION -->
-  <section class="stats-section" style="background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); color: white; padding: 60px 0; margin-top: 0;">
-    <div class="stats-inner">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
-        <div style="padding: 20px;">
-          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">4</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Founding Members</div>
-        </div>
-        <div style="padding: 20px;">
-          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">50+</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Years Combined Experience</div>
-        </div>
-        <div style="padding: 20px;">
-          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">4</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Business Divisions</div>
-        </div>
-        <div style="padding: 20px;">
-          <div style="font-size: 3rem; font-weight: bold; margin-bottom: 10px;">22</div>
-          <div style="font-size: 1.1rem; opacity: 0.9;">Acres Cricket Development</div>
-        </div>
+  <section class="stats" aria-label="Company highlights">
+    <div class="container stats-grid">
+      <div class="stat"><strong>4</strong><span>Founding Members</span></div>
+      <div class="stat"><strong>50+</strong><span>Years Combined Experience</span></div>
+      <div class="stat"><strong>4</strong><span>Core Divisions</span></div>
+      <div class="stat"><strong>22</strong><span>Acres in Development</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About HexaRoot Ventures</h2>
+        <p>Founded by Pratikkumar Patel with fellow cricketers Jugal Chokshi, Nilpeshkumar Patel, and Bhavik Gandhi, HexaRoot brings teamwork from the field to execution in business.</p>
+      </div>
+      <div class="about-wrap">
+        <article class="panel">
+          <h3>What We Build</h3>
+          <p>We build and scale practical businesses with clear operations, strong finance discipline, and long-term value creation across sectors that serve everyday communities.</p>
+        </article>
+        <article class="panel">
+          <h3>Where We Focus</h3>
+          <p>Dallas–Fort Worth and surrounding markets with a strategic roadmap into lodging and additional commercial opportunities over the coming years.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section-band">
-    <div class="section-inner">
-    <h2>About Us</h2>
-    <p class="section-subtitle">
-      Founded by <strong>Pratikkumar Patel</strong> and three fellow cricketer friends —
-      <strong>Jugal Chokshi</strong>, <strong>Nilpeshkumar Patel</strong>, and <strong>Bhavik Gandhi</strong> — HexaRoot Ventures brings teamwork,
-      dedication, and vision from the cricket field into the business world. We operate in Real Estate and
-      Food &amp; Hospitality with a roadmap into commercial investments and lodging assets across the Dallas–Fort Worth area.
-    </p>
-    </div>
-  </section>
-
-  <!-- VENTURES -->
-  <section id="ventures">
-    <h2>Our Ventures</h2>
-    <p class="section-subtitle">Focused divisions with shared strategy, finance, and technology.</p>
-    
-    <!-- Current Project -->
-    <div class="feature-callout">
-      <h3>🏏 Coming Soon: Cricket Ground Development</h3>
-      <p>Our inaugural project - developing 5 professional cricket grounds on 22 acres of prime land that brings our passion for the sport into a profitable venture, combining recreation, community building, and sustainable business operations.</p>
-      
-      <!-- Cricket Ground Image Placeholder -->
-      <div>
-        <!-- Image Gallery Grid -->
-        <div class="feature-gallery">
-          <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&h=250&fit=crop" 
-               alt="Cricket Stadium"
-               onerror="this.style.display='none';" />
-          <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=250&fit=crop" 
-               alt="Cricket Ground Field"
-               onerror="this.style.display='none';" />
-          <img src="https://images.unsplash.com/photo-1593766787879-e8c78e09cec0?w=400&h=250&fit=crop" 
-               alt="Cricket Pitch"
-               onerror="this.style.display='none';" />
-        </div>
-        <div class="feature-note">
-          <strong>5 Professional Cricket Grounds • 22 Acres</strong>
-          <div style="opacity: 0.8;">Project renderings and site photos coming soon</div>
-        </div>
+  <section id="ventures" class="ventures">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Venture Portfolio</h2>
+        <p>Independent divisions connected by shared strategy, execution standards, and scalable systems.</p>
       </div>
-    </div>
-    
-    <div class="ventures">
-      <div class="venture">
-        <h3>🍴 Food &amp; Hospitality</h3>
-        <p>Restaurant and café operations, corporate &amp; event catering, and guest-first standards across training, quality, and controls.</p>
-      </div>
-      <div class="venture">
-        <h3>🏗️ Real Estate</h3>
-        <p>Brokerage, leasing, and property management for residential &amp; commercial assets; investor advisory and hold/sell analysis.</p>
-      </div>
-      <div class="venture">
-        <h3>🧩 Commercial Investment Properties</h3>
-        <p>Acquisition and rental management for stable cash flow and long-term appreciation across retail, office, and mixed-use.</p>
-      </div>
-      <div class="venture">
-        <h3>🛎️ Motel/Hotel (Roadmap)</h3>
-        <p>Targeting limited-service assets aligned with DFW business and event demand, with a focus on efficient ops and guest experience.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>🍽 Food & Hospitality</h3>
+          <p>Restaurant operations, quality controls, and guest-centered service frameworks across dine-in, events, and growth planning.</p>
+        </article>
+        <article class="card">
+          <h3>🏗 Real Estate</h3>
+          <p>Acquisition advisory, brokerage support, leasing strategy, and active property management for residential and commercial assets.</p>
+        </article>
+        <article class="card">
+          <h3>🏢 Commercial Investment Properties</h3>
+          <p>Cash-flow-driven investments in retail, office, and mixed-use properties with risk-balanced, long-horizon decision-making.</p>
+        </article>
+        <article class="card">
+          <h3>🛎 Motel/Hotel Roadmap</h3>
+          <p>Future expansion into limited-service lodging aligned with demand corridors and operations-led profitability.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- TEAM -->
+  <section aria-label="Featured development">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Development: Cricket Grounds</h2>
+        <p>Our inaugural development project includes five professional cricket grounds across 22 acres, combining sport, community, and commercial value.</p>
+      </div>
+      <div class="project">
+        <img src="hero-bg.jpg[1].jpg" alt="Cricket development site" />
+        <article class="panel">
+          <h3>Project Vision</h3>
+          <p>To create a high-quality cricket destination in the region while building an asset-backed business model rooted in repeat usage, events, and partnerships.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="team">
-    <h2>Our Founding Team</h2>
-    <p class="section-subtitle">Meet the leaders guiding HexaRoot Ventures.</p>
+    <div class="container">
+      <div class="section-head">
+        <h2>Leadership Team</h2>
+        <p>A cross-functional team spanning operations, technology delivery, finance, security, and strategic growth.</p>
+      </div>
+      <div class="team-grid">
+        <article class="person">
+          <img src="Patrick Img.jpg" alt="Pratikkumar Patel" />
+          <div class="person-body"><h3>Pratikkumar Patel</h3><p>Founder & CEO</p></div>
+        </article>
+        <article class="person">
+          <img src="nilpesh.jpg.jpg" alt="Nilpeshkumar Patel" />
+          <div class="person-body"><h3>Nilpeshkumar Patel</h3><p>Co-Founder & Managing Partner</p></div>
+        </article>
+        <article class="person">
+          <img src="jugal.jpg.jpg" alt="Jugal Chokshi" />
+          <div class="person-body"><h3>Jugal Chokshi</h3><p>Co-Founder & Managing Partner</p></div>
+        </article>
+        <article class="person">
+          <img src="bhavik.jpg.jpg" alt="Bhavik Gandhi" />
+          <div class="person-body"><h3>Bhavik Gandhi</h3><p>Co-Founder & Managing Partner</p></div>
+        </article>
+        <article class="person">
+          <img src="darshan.jpg.jpg" alt="Darshan" />
+          <div class="person-body"><h3>Darshan</h3><p>Operations Support</p></div>
+        </article>
+        <article class="person">
+          <img src="raj.jpg.jpg" alt="Raj" />
+          <div class="person-body"><h3>Raj</h3><p>Business Support</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <div class="grid">
-      <!-- Patrick -->
-      <div class="card">
-        <div class="card-header">
-          <img class="avatar-img" src="Patrick%20Img.jpg"
-               alt="Patrick Patel"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="avatar" style="display:none;">PP</div>
-          <div>
-            <h3>Pratikkumar Patel</h3>
-            <p>Founder &amp; CEO</p>
+  <section id="contact" class="ventures">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact Us</h2>
+        <p>We welcome partnerships, investment discussions, and growth opportunities.</p>
+      </div>
+      <div class="contact-wrap">
+        <article class="panel">
+          <h3>Get in Touch</h3>
+          <div class="contact-list">
+            <span>Email: <a href="mailto:contact@hexarootventures.com">contact@hexarootventures.com</a></span>
+            <span>Domain: <a href="https://www.hexarootventures.com">www.hexarootventures.com</a></span>
           </div>
-        </div>
-        <div class="tags">
-          <span class="tag">Hospitality</span><span class="tag">Real Estate</span><span class="tag">IT Leadership</span>
-        </div>
-        <div class="bio">
-          Patrick brings 13+ years of hospitality experience, managing and expanding restaurants and motels across TX, VA, PA, and NJ.
-          With experience as a Business Analyst and current QA Lead Manager in IT, he blends operational and technical expertise to
-          drive strategic vision and build a trusted, multi-division brand in food, real estate, and investments.
-        </div>
+        </article>
+        <article class="panel">
+          <form action="#" method="POST" onsubmit="alert('Thanks for reaching out. We will contact you soon.'); return false;">
+            <label>Name<input type="text" name="name" required /></label>
+            <label>Email<input type="email" name="email" required /></label>
+            <label>Message<textarea name="message" rows="5" required></textarea></label>
+            <button class="submit" type="submit">Send Message</button>
+          </form>
+        </article>
       </div>
-
-     <!-- Nilpesh -->
-    <div class="card">
-      <div class="card-header">
-        <img class="avatar-img" src="nilpesh.jpg.jpg" alt="Nilpeshkumar Patel"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="avatar" style="display:none;">NP</div>
-        <div>
-          <h3>Nilpeshkumar Patel</h3>
-          <p>Co-Founder &amp; Managing Partner</p>
-        </div>
-      </div>
-      <div class="tags">
-        <span class="tag">IT Delivery</span><span class="tag">Restaurant Ops</span><span class="tag">Finance</span>
-      </div>
-      <div class="bio">
-        14+ years in IT as Advisor/Delivery Manager, 7+ years as a restaurant owner in the U.S. &amp; Canada, and 5+ years in wealth &amp; insurance.
-        As Chief Strategy &amp; Delivery Officer, Nilpesh builds scalable systems and executes the growth roadmap.
-      </div>
-    </div>
-<!-- Jugal -->
-<div class="card">
-  <div class="card-header">
-    <img class="avatar-img" src="jugal.jpg.jpg"
-         alt="Jugal Chokshi"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <div class="avatar" style="display:none;">JC</div>
-    <div>
-      <h3>Jugal Chokshi</h3>
-      <p>Co-Founder &amp; Managing Partner</p>
-    </div>
-  </div>
-  <div class="tags">
-    <span class="tag">Finance</span><span class="tag">Investments</span><span class="tag">Operations</span><span class="tag">Compliance</span>
-  </div>
-  <div class="bio">
-    Financial Services Professional with expertise in retirement planning, investments, annuities, and insurance (licensed through NYLIFE Securities LLC, FINRA/SIPC).
-    As COO, Jugal steers operations, compliance, and sustainable growth across our divisions.
-  </div>
-</div>
-
-      <!-- Bhavik -->
-    <div class="card">
-      <div class="card-header">
-        <img class="avatar-img" src="bhavik.jpg.jpg" alt="Bhavik Gandhi"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="avatar" style="display:none;">BG</div>
-        <div>
-          <h3>Bhavik Gandhi</h3>
-          <p>Co-Founder &amp; Managing Partner</p>
-        </div>
-      </div>
-      <div class="tags">
-        <span class="tag">Network Security</span><span class="tag">Operations</span><span class="tag">Finance</span>
-      </div>
-      <div class="bio">
-        8+ years as a Network Security Engineer with added experience in finance and operations. Bhavik strengthens our technology posture and day-to-day reliability.
-      </div>
-    </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact section-band">
-    <div class="section-inner">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:contact@hexarootventures.com">contact@hexarootventures.com</a></p>
-    <!-- Simple form shell (wire to Formspree or your backend if you wish) -->
-    <form action="#" method="POST" onsubmit="alert('Thanks! This demo form is not wired yet.'); return false;">
-      <div class="form-grid">
-        <label>Name<br><input type="text" name="name" required></label>
-        <label>Email<br><input type="email" name="email" required></label>
-      </div>
-      <label>Message<br><textarea name="message" rows="5" required></textarea></label>
-      <button type="submit">Send</button>
-    </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <img src="HexaRoot_logo_footer.png" alt="HexaRoot Ventures logo" class="footer-logo" />
-      <p>© 2025 HexaRoot Ventures. All rights reserved.</p>
-      <p class="credit">
-        Site created by
-        <a href="https://aksharnixglobal.com" target="_blank" rel="noopener"><strong>AksharNix Global</strong></a>
-      </p>
+    <div class="container footer-inner">
+      <img src="HexaRoot_logo_footer.png" alt="HexaRoot Ventures" class="footer-logo" />
+      <div class="small">© <span id="year"></span> HexaRoot Ventures. All rights reserved.</div>
+      <div class="small">Site by <a href="https://aksharnixglobal.com" target="_blank" rel="noopener">AksharNix Global</a></div>
     </div>
   </footer>
 
   <script>
-    // Mobile menu
-    const btn = document.getElementById('menuBtn');
-    const nav = document.getElementById('primaryNav');
-    if (btn && nav) {
-      btn.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        nav.classList.toggle('open', !open);
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        navLinks.classList.toggle('open', !isOpen);
       });
-      // Close on link click (mobile)
-      nav.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          btn.setAttribute('aria-expanded','false');
-          nav.classList.remove('open');
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          navLinks.classList.remove('open');
         });
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-          btn.setAttribute('aria-expanded','false');
-          nav.classList.remove('open');
-        }
-      });
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          btn.setAttribute('aria-expanded','false');
-          nav.classList.remove('open');
-        }
       });
     }
 
-    // Scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.style.opacity = '1';
-            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-          }, index * 100);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe all major sections and cards
-    document.addEventListener('DOMContentLoaded', () => {
-      const animatedElements = document.querySelectorAll('.venture, .card, section > h2, section > .section-subtitle');
-      animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        observer.observe(el);
-      });
-    });
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
